@@ -7,7 +7,7 @@ on:
       branches: [ master ]
 
 jobs:
-    build-n-publish:
+    deploy:
        runs-on: ubuntu-latest
        strategy:
          fail-fast: false
