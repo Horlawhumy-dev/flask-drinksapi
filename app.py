@@ -1,6 +1,26 @@
-from flask import Flask, request
-
+from flask import Flask
+from datetime import datetime
 app = Flask(__name__)
+
+data = {
+    "drinks": [
+        {
+            "name": "Grape", 
+            "description": "Delicious grape fruit drink",
+            "date": datetime.now()
+            },
+            {
+            "name": "Lemon", 
+            "description": "Undiluted lemon fruit drink",
+            "date": datetime.now()
+            },
+            {
+            "name": "Mango", 
+            "description": "This is a mango fruit",
+            "date": datetime.now()
+            }
+    ]
+} 
 
 @app.route("/")
 def index():
@@ -8,11 +28,8 @@ def index():
         
 @app.route('/drinks')
 def get_drinks():
-    return {"name": "Grape", "description": "Delicious grape fruit drink"}
-
-# @app.route('/drinks/<id>')
-# def get_drink():
-
+    return data
+    
 
 if __name__ == "__main__":
     app.debug = True
